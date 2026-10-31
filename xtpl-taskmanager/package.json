@@ -1,0 +1,21 @@
+{
+  "name": "xtpl-taskmanager",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w xtpl-taskmanager-api\" \"npm run dev -w xtpl-taskmanager\"",
+    "build": "npm run build -w xtpl-taskmanager",
+    "start": "npm start -w xtpl-taskmanager-api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.3"
+  }
+}
